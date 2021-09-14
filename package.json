@@ -1,6 +1,6 @@
 {
   "name": "@apeswapfinance/test-helpers",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "JavaScript testing helpers for ApeSwap contract integration.",
   "main": "index.js",
   "files": [
