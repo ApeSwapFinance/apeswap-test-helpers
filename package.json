@@ -1,10 +1,11 @@
 {
-  "name": "@openzeppelin/test-helpers",
-  "version": "0.5.13",
-  "description": "JavaScript testing helpers for Ethereum smart contract development.",
+  "name": "@apeswapfinance/test-helpers",
+  "version": "0.0.1",
+  "description": "JavaScript testing helpers for ApeSwap contract integration.",
   "main": "index.js",
   "files": [
     "src",
+    "build-apeswap",
     "index.js",
     "configure.js"
   ],
@@ -12,14 +13,19 @@
     "docs": "oz-docs",
     "docs:watch": "npm run docs watch",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "release": "scripts/release/release.sh",
-    "test": "./scripts/test.sh --network ganache",
+    "test": "mocha --exit --recursive",
+    "test-legacy": "./scripts/test.sh --network ganache",
     "test-integration": "bash -x test-integration/run-all.sh",
     "version": "scripts/release/update-changelog-release-date.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OpenZeppelin/openzeppelin-test-helpers.git"
+    "url": "git+https://github.com/ApeSwapFinance/apeswap-test-helpers.git"
+  },
+  "publishConfig": {
+    "@apeswapfinance:test-helpers": "https://npm.pkg.github.com"
   },
   "keywords": [
     "ethereum",
@@ -28,19 +34,21 @@
     "test",
     "solidity",
     "zeppelin",
-    "openzeppelin"
+    "openzeppelin",
+    "ape",
+    "apeswap"
   ],
-  "author": "OpenZeppelin Community <maintainers@openzeppelin.org>",
+  "author": "ApeSwap",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/OpenZeppelin/openzeppelin-test-helpers/issues"
+    "url": "https://github.com/ApeSwapFinance/apeswap-test-helpers/issues"
   },
-  "homepage": "https://github.com/OpenZeppelin/openzeppelin-test-helpers#readme",
+  "homepage": "https://github.com/ApeSwapFinance/apeswap-test-helpers#readme",
   "dependencies": {
     "@openzeppelin/contract-loader": "^0.6.2",
+    "@openzeppelin/test-environment": "^0.1.9",
     "@truffle/contract": "^4.0.35",
     "ansi-colors": "^3.2.3",
-    "chai": "^4.2.0",
     "chai-bn": "^0.2.1",
     "ethjs-abi": "^0.2.1",
     "lodash.flatten": "^4.4.0",
@@ -49,6 +57,7 @@
     "web3-utils": "^1.2.5"
   },
   "devDependencies": {
+    "chai": "^4.3.4",
     "eslint": "^5.9.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
@@ -57,6 +66,7 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "ganache-cli": "^6.5.0",
+    "mocha": "^8.1.2",
     "openzeppelin-docs-utils": "git+https://OpenZeppelin@github.com/OpenZeppelin/docs-utils.git",
     "truffle": "^5.1.46"
   }
