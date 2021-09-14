@@ -7,6 +7,10 @@ This project uses [@openzeppelin/test-environment](https://github.com/OpenZeppel
 ### Installation
 
 ```bash
+yarn add -D @apeswapfinance/test-helpers
+```
+OR 
+```bash
 npm install --save-dev @apeswapfinance/test-helpers
 ```
 
