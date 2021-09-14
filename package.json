@@ -20,13 +20,7 @@
     "test-integration": "bash -x test-integration/run-all.sh",
     "version": "scripts/release/update-changelog-release-date.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ApeSwapFinance/apeswap-test-helpers.git"
-  },
-  "publishConfig": {
-    "@apeswapfinance:test-helpers": "https://npm.pkg.github.com"
-  },
+  "repository": "https://github.com/ApeSwapFinance/apeswap-test-helpers.git",
   "keywords": [
     "ethereum",
     "smart",
