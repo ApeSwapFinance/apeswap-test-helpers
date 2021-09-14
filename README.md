@@ -14,6 +14,12 @@ OR
 npm install --save-dev @apeswapfinance/test-helpers
 ```
 
+### Configruation
+In your environment, set `NPM_TOKEN` to your [github access token](https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages#authenticating-to-github-packages). 
+```bash
+export NPM_TOKEN=<github-access-token>
+```
+
 #### Hardhat (formerly Buidler)
 Install `web3` and the `hardhat-web3` plugin.
 
