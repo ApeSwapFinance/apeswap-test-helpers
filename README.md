@@ -15,6 +15,13 @@ npm install --save-dev @apeswapfinance/test-helpers
 ```
 
 ### Configruation
+As this module is hosted as a GitHub package, create a `.npmrc` file in the root of your project with these details: 
+
+```
+@apeswapfinance:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${NPM_TOKEN}
+```
+
 In your environment, set `NPM_TOKEN` to your [github access token](https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages#authenticating-to-github-packages). 
 ```bash
 export NPM_TOKEN=<github-access-token>
