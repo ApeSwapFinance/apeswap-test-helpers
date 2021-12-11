@@ -1,4 +1,6 @@
 # ApeSwap Test Helpers
+
+A suite of Solidity smart contract test helpers. Use to easily test contracts against popular ApeSwap features.
 ### _**NOTICE**_: 
 This project uses [@openzeppelin/test-environment](https://github.com/OpenZeppelin/openzeppelin-test-environment) under the hood to deploy contracts to the development. Using this helper module assumes you are using `@openzeppelin/test-environment` for testing as well.
 
