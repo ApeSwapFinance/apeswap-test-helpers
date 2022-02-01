@@ -1,4 +1,8 @@
 # Changelog
+
+## 0.2.0 (2021-02-01)
+* Update config for npm package publish
+
 ## 0.1.0 (2021-02-01)
 
 ### Added
