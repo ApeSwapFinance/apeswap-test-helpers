@@ -21,24 +21,29 @@ const MasterApe = contract.fromABI(MasterApeBuild.abi, MasterApeBuild.bytecode);
  * @param {Array(string)} accounts Pass in the accounts array provided from @openzeppelin/test-environment
  * @returns {FarmDetails}
  */
-async function deployMockFarm ([owner, feeTo]) {
+async function deployMockFarm ([owner, feeTo], {
+  initialMint = '25000' + '000000000000000000',
+  bananaPerBlock = '10' + '000000000000000000',
+}) {
   // Setup BananaToken
-  const INITIAL_MINT = '25000' + '000000000000000000';
   const bananaToken = await BananaToken.new({ from: owner });
-  await bananaToken.mint(owner, INITIAL_MINT, { from: owner });
+  await bananaToken.mint(owner, initialMint, { from: owner });
   // Setup BananaSplitBar
-  const bananaSplitBar = await BananaSplitBar.new(feeTo, { from: owner });
+  const bananaSplitBar = await BananaSplitBar.new(bananaToken.address, { from: owner });
 
   // Setup MasterApe
   const masterApe = await MasterApe.new(
     bananaToken.address,
     bananaSplitBar.address,
     feeTo, // Dev fee getter
-    '10' + '000000000000000000', // BANANA per block
+    bananaPerBlock, // BANANA per block
     0, // Starting block number
     1, // multiplier
     { from: owner }
   );
+
+  await bananaToken.transferOwnership(masterApe.address, { from: owner });
+  await bananaSplitBar.transferOwnership(masterApe.address, { from: owner });
 
   return {
     bananaToken,
