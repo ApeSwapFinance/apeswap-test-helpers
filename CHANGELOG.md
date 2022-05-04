@@ -1,6 +1,11 @@
 # Changelog
 
+## 1.0.0 (2022-05-03)
+## Changed
+* Change npm registry
+
 ## 0.2.0 (2021-02-01)
+## Changed
 * Update config for npm package publish
 
 ## 0.1.0 (2021-02-01)
