@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.1 (2022-05-03)
+## Added
+* `dexRouter` to `dex.deployMockDex`
+* tests for `dexRouter`
+## Changed
+* Updated documentation
+* fixed broken tests
+  
 ## 1.0.0 (2022-05-03)
 ## Changed
 * Change npm registry

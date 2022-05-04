@@ -5,6 +5,8 @@ const ApeFactoryBuild = require('../build-apeswap/dex/contracts/ApeFactory.json'
 const ApeFactory = contract.fromABI(ApeFactoryBuild.abi, ApeFactoryBuild.bytecode);
 const ApePairBuild = require('../build-apeswap/dex/contracts/ApePair.json');
 const ApePair = contract.fromABI(ApePairBuild.abi, ApePairBuild.bytecode);
+const ApeRouterBuild = require('../build-apeswap/dex/contracts/ApeRouter.json');
+const ApeRouter = contract.fromABI(ApeRouterBuild.abi, ApeRouterBuild.bytecode);
 
 // Setup Token Contracts
 const ERC20MockBuild = require('../build-apeswap/token/contracts/ERC20Mock.json');
@@ -26,13 +28,14 @@ const ERC20Mock = contract.fromABI(ERC20MockBuild.abi, ERC20MockBuild.bytecode);
  * @returns {DexDetails}
  */
 // NOTE: Currently does not create a BANANA/WBNB pair
-async function deployMockDex ([owner, feeTo, alice], numPairs = 2) {
+async function deployMockDex([owner, feeTo, alice], numPairs = 2) {
   const BASE_BALANCE = '1000' + '000000000000000000';
   // Setup DEX factory
   const dexFactory = await ApeFactory.new(feeTo, { from: owner });
 
   // Setup pairs
   const mockWBNB = await ERC20Mock.new('Wrapped Native', 'WNative', { from: owner });
+  const dexRouter = await ApeRouter.new(dexFactory.address, mockWBNB.address);
   const mockTokens = [];
   const dexPairs = [];
   for (let index = 0; index < numPairs; index++) {
@@ -57,6 +60,7 @@ async function deployMockDex ([owner, feeTo, alice], numPairs = 2) {
 
   return {
     dexFactory,
+    dexRouter,
     mockWBNB,
     mockTokens,
     dexPairs,
