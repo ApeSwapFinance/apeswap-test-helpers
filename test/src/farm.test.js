@@ -3,14 +3,14 @@ const { farm } = require('../../index');
 const { assert } = require('chai');
 
 describe('MasterApe', function () {
-//   const [owner, feeTo, alice, bob, carol] = accounts;
+  //   const [owner, feeTo, alice, bob, carol] = accounts;
 
   beforeEach(async () => {
     const {
-    //   bananaToken,
-    //   bananaSplitBar,
+      //   bananaToken,
+      //   bananaSplitBar,
       masterApe,
-    } = await farm.deployMockFarm(accounts); // accounts passed will be used in the deployment
+    } = await farm.deployMockFarm(accounts, {}); // accounts passed will be used in the deployment
     this.masterApe = masterApe;
   });
 

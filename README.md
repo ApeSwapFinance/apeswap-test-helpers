@@ -48,7 +48,7 @@ Import `@apeswapfinance/test-helpers` in your test files to access helper deploy
 const {
   dex,  // Deploy/manage a test dex
   farm, // Deploy/manage a test farm
-} = require('@apeswapfinance/test-helpers');
+} = require('@ape.swap/test-helpers');
 const { accounts, contract } = require('@openzeppelin/test-environment');
 const { assert } = require('chai');
 
@@ -60,7 +60,10 @@ describe('MasterApe', function () {
             bananaToken,
             bananaSplitBar,
             masterApe,
-        } = await farm.deployMockFarm(accounts); // accounts passed will be used in the deployment
+        } = await farm.deployMockFarm(accounts, {
+            initialMint, // defaults to 25,000
+            bananaPerBlock, // defaults to 10
+        }); // accounts passed will be used in the deployment
         this.masterApe = masterApe;
     });
 
@@ -75,7 +78,7 @@ describe('MasterApe', function () {
 const {
   dex,  // Deploy/manage a test dex
   farm, // Deploy/manage a test farm
-} = require('@apeswapfinance/test-helpers');
+} = require('@ape.swap/test-helpers');
 const { accounts, contract } = require('@openzeppelin/test-environment');
 const { assert } = require('chai');
 
@@ -86,6 +89,7 @@ describe('ApeFactory', function () {
     beforeEach(async () => {
         const {
             dexFactory,
+            dexRouter,
             mockWBNB,
             mockTokens,
             dexPairs

@@ -1,4 +1,29 @@
 # Changelog
+
+## 1.1.0 (2022-05-17)
+## Added
+* Tests to `dex.test.js`
+## Changed
+* Updated `ApeRouter` bytecode to properly interact with `ApeFactory`
+* Add liquidity through `ApeRouter` when creating "MockDex"
+
+
+## 1.0.1 (2022-05-03)
+## Added
+* `dexRouter` to `dex.deployMockDex`
+* tests for `dexRouter`
+## Changed
+* Updated documentation
+* fixed broken tests
+  
+## 1.0.0 (2022-05-03)
+## Changed
+* Change npm registry
+
+## 0.2.0 (2021-02-01)
+## Changed
+* Update config for npm package publish
+
 ## 0.1.0 (2021-02-01)
 
 ### Added

@@ -44,7 +44,6 @@
     "prefer-const": "error",
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
-    "space-before-function-paren": ["error", "always"],
 
     "mocha-no-only/mocha-no-only": ["error"],
 
