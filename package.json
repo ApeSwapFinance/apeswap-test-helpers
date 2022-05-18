@@ -65,6 +65,6 @@
     "ganache-cli": "^6.5.0",
     "mocha": "^8.1.2",
     "openzeppelin-docs-utils": "git+https://OpenZeppelin@github.com/OpenZeppelin/docs-utils.git",
-    "truffle": "^5.1.46"
+    "truffle": "^5.5.14"
   }
 }
